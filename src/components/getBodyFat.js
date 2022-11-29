@@ -1,11 +1,11 @@
-const getBodyFatPercentage = (
-  age = 0,
-  weight = 0,
-  chestSkin = 0,
-  abSkin = 0,
-  thighSkin = 0
-) => {
-  console.log(age, weight, chestSkin, abSkin, thighSkin)
+const getBodyFatPercentage = (age, weight, chestSkin, abSkin, thighSkin) => {
+  console.log(age, weight, chestSkin, abSkin, thighSkin, age > 0)
+  if (
+    !(age > 0 && weight > 0 && chestSkin > 0 && abSkin > 0 && thighSkin > 0)
+  ) {
+    return { bodyFat: '--.-', fatMass: '--', leanMass: '--' }
+  }
+
   const fatTotal = chestSkin + abSkin + thighSkin
   const fatSquared = Math.pow(fatTotal, 2)
   const density =
