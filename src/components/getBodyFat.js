@@ -5,6 +5,7 @@ const getBodyFatPercentage = (
   abSkin = 0,
   thighSkin = 0
 ) => {
+  console.log(age, weight, chestSkin, abSkin, thighSkin)
   const fatTotal = chestSkin + abSkin + thighSkin
   const fatSquared = Math.pow(fatTotal, 2)
   const density =
@@ -12,7 +13,11 @@ const getBodyFatPercentage = (
   const bodyFat = (4.57 / density - 4.142) * 100
   const fatMass = (weight * bodyFat * 0.01).toFixed(1)
 
-  return bodyFat.toFixed(1), fatMass, weight - fatMass
+  return {
+    bodyFat: bodyFat.toFixed(1),
+    fatMass: fatMass,
+    leanMass: weight - fatMass
+  }
 }
 
 export default getBodyFatPercentage

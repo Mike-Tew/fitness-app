@@ -12,9 +12,11 @@ const BodyFatView = () => {
   const [bodyFat, setBodyFat] = useState(0)
 
   useEffect(() => {
-    let tttt = getBodyFatPercentage()
-    console.log(tttt);
-  })
+    setBodyFat(
+      getBodyFatPercentage(+age, +weight, +chestSkin, +abSkin, +thighSkin)
+    )
+    console.log(bodyFat)
+  }, [age, weight, chestSkin, abSkin, thighSkin])
 
   return (
     <>
@@ -32,6 +34,7 @@ const BodyFatView = () => {
                 id="outlined-basic"
                 label="years"
                 variant="outlined"
+                onChange={(e) => setAge(e.target.value)}
               ></TextField>
               <Typography variant="h6" gutterBottom>
                 WEIGHT
@@ -40,6 +43,7 @@ const BodyFatView = () => {
                 id="outlined-basic"
                 label="pounds"
                 variant="outlined"
+                onChange={(e) => setWeight(e.target.value)}
               ></TextField>
               <Typography variant="h6" gutterBottom>
                 CHEST
@@ -48,6 +52,7 @@ const BodyFatView = () => {
                 id="outlined-basic"
                 label="mm"
                 variant="outlined"
+                onChange={(e) => setChestSkin(e.target.value)}
               ></TextField>
               <Typography variant="h6" gutterBottom>
                 ABDOMINAL
@@ -56,6 +61,7 @@ const BodyFatView = () => {
                 id="outlined-basic"
                 label="mm"
                 variant="outlined"
+                onChange={(e) => setAbSkin(e.target.value)}
               ></TextField>
               <Typography variant="h6" gutterBottom>
                 THIGH
@@ -64,6 +70,7 @@ const BodyFatView = () => {
                 id="outlined-basic"
                 label="mm"
                 variant="outlined"
+                onChange={(e) => setThighSkin(e.target.value)}
               ></TextField>
             </Box>
             <Box sx={{ p: 5 }}>
@@ -71,19 +78,19 @@ const BodyFatView = () => {
                 Body Fat
               </Typography>
               <Typography align="center" variant="h6" gutterBottom>
-                --.-%
-              </Typography>
-              <Typography align="center" variant="h5">
-                Lean Mass
-              </Typography>
-              <Typography align="center" variant="h6" gutterBottom>
-                -- lb
+                {bodyFat.bodyFat}%
               </Typography>
               <Typography align="center" variant="h5">
                 Fat Mass
               </Typography>
+              <Typography align="center" variant="h6" gutterBottom>
+                {bodyFat.fatMass} lb
+              </Typography>
+              <Typography align="center" variant="h5">
+                Lean Mass
+              </Typography>
               <Typography align="center" variant="h6">
-                -- lb
+                {bodyFat.leanMass} lb
               </Typography>
             </Box>
           </Box>
