@@ -21,8 +21,10 @@ const getBmiText = (bmi = 0) => {
       return 'Obese Class I'
     case bmi < 40:
       return 'Obese Class II'
-    default:
+    case bmi >= 40:
       return 'Obese Class III'
+    default:
+      return '--.-'
   }
 }
 

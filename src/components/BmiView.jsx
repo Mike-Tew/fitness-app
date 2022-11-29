@@ -25,7 +25,7 @@ const BmiView = () => {
           <Box sx={{ display: 'flex' }}>
             <Box>
               <Box sx={{ pt: 4 }}>
-                <Typography variant="h6" gutterBottom="true">
+                <Typography variant="h6" gutterBottom>
                   Weight
                 </Typography>
                 <TextField
@@ -36,7 +36,7 @@ const BmiView = () => {
                 />
               </Box>
               <Box sx={{ pt: 2 }}>
-                <Typography variant="h6" gutterBottom="true">
+                <Typography variant="h6" gutterBottom>
                   Height
                 </Typography>
                 <TextField
@@ -53,7 +53,7 @@ const BmiView = () => {
                 />
               </Box>
             </Box>
-            <Box sx={{ p: 5 }}>
+            <Box sx={{ p: 5, width: '20rem' }}>
               <Typography align="center" variant="h3">
                 {bmi}
               </Typography>
