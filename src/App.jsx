@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Box } from '@mui/system'
 import './App.css'
-import BmiView from './components/BmiView'
+import BodyFatView from './components/BodyFatView'
 
 const darkTheme = createTheme({
   palette: {
@@ -49,7 +49,8 @@ function App() {
             ml: `${drawerWidth}px`
           }}
         >
-          <BmiView />
+          <BodyFatView />
+          {/* <BmiView /> */}
         </Box>
       </Box>
     </ThemeProvider>
