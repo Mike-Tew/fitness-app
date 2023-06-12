@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script src="./calorie-calculator.js" defer></script>
+  </head>
+
+  <body>
+    <div class="flex flex-row bg-slate-100 text-2xl">
+      <div
+        class="flex w-40 flex-col items-center overflow-hidden rounded bg-gray-900 text-gray-400"
+      >
+        <div class="w-full px-2">
+          <div class="flex w-full flex-col items-center border-gray-700 pb-6">
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="report.html"
+            >
+              <span class="ml-2 text-sm font-medium">Body</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded bg-gray-700 px-3 text-gray-200"
+              href="#"
+            >
+              <span class="ml-2 text-sm font-medium">Calculator</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="bmi.html"
+            >
+              <span class="ml-2 text-sm font-medium">BMI</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto max-w-sm font-serif shadow-2xl">
+        <div class="my-2 rounded-lg border-2 border-slate-300 bg-slate-100">
+          <h1
+            class="mb-5 bg-gradient-to-r from-slate-400 to-slate-200 py-5 text-center text-3xl"
+          >
+            Calorie Calculator
+          </h1>
+          <div class="flex flex-row justify-around">
+            <div class="flex flex-col">
+              <div>
+                <input
+                  checked
+                  type="radio"
+                  name="sex"
+                  id="male"
+                  onchange="getResults()"
+                />
+                <label for="male">Male</label>
+              </div>
+              <div class="mt-2">
+                <input
+                  type="radio"
+                  id="female"
+                  name="sex"
+                  onchange="getResults()"
+                />
+                <label for="female">Female</label>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div>
+                <input
+                  checked
+                  type="radio"
+                  id="imperial"
+                  name="system"
+                  onchange="getResults()"
+                />
+                <label for="imperial">Imperial</label>
+              </div>
+              <div class="mt-2">
+                <input
+                  type="radio"
+                  id="metric"
+                  name="system"
+                  onchange="getResults()"
+                />
+                <label for="metric">Metric</label>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 text-right">
+            <div class="mb-4 flex">
+              <label class="w-1/2 pr-2" for="age">Age</label>
+              <input
+                class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                type="number"
+                id="age"
+                name="age"
+                placeholder="36"
+                oninput="getResults()"
+              />
+            </div>
+            <div class="mb-4 flex">
+              <label class="w-1/2 pr-2" for="weight">Weight</label>
+              <input
+                class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                type="number"
+                id="weight"
+                name="weight"
+                placeholder="200"
+                oninput="getResults()"
+              />
+              <label id="weight-label" class="pl-2" for="weight">lb</label>
+            </div>
+            <div class="mb-4 flex">
+              <label class="w-1/2 pr-2" for="minutes">Minutes</label>
+              <input
+                class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                type="number"
+                id="minutes"
+                name="minutes"
+                placeholder="45"
+                oninput="getResults()"
+              />
+            </div>
+            <div class="mb-4 flex">
+              <label class="w-1/2 pr-2" for="heart-rate">Heart Rate</label>
+              <input
+                class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                type="number"
+                id="heart-rate"
+                name="heart-rate"
+                placeholder="135"
+                oninput="getResults()"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-10 bg-gradient-to-r from-slate-400 to-slate-200 py-5 text-center font-mono font-semibold"
+          >
+            <h3>You Burned</h3>
+            <h3 id="results" class="text-rose-500">0</h3>
+            <h3>Calories</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

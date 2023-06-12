@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="./report.js" defer></script>
+  </head>
+
+  <body>
+    <div class="flex flex-row bg-slate-100 text-2xl">
+      <div
+        class="flex w-40 flex-col items-center overflow-hidden rounded bg-gray-900 text-gray-400"
+      >
+        <div class="w-full px-2">
+          <div class="flex w-full flex-col items-center border-gray-700 pb-6">
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded bg-gray-700 px-3 text-gray-200 hover:bg-gray-700"
+              href="#"
+            >
+              <span class="ml-2 text-sm font-medium">Body</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="calorie-calculator.html"
+            >
+              <span class="ml-2 text-sm font-medium">Calculator</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="bmi.html"
+            >
+              <span class="ml-2 text-sm font-medium">BMI</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto my-5 max-w-sm font-serif shadow-2xl">
+        <div>Body</div>
+        <div>
+          <input
+            class="w-16"
+            type="number"
+            name="weight"
+            id="weight"
+            placeholder="200"
+          />
+          <label for="weight">Enter Weight</label>
+          <button id="weight-button" class="bg-slate-300">SUMBIT</button>
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script src="./bmi.js" defer></script>
+  </head>
+
+  <body>
+    <div class="flex flex-row bg-slate-100 text-xl">
+      <div
+        class="flex w-40 flex-col items-center overflow-hidden rounded bg-gray-900 text-gray-400"
+      >
+        <div class="w-full px-2">
+          <div class="flex w-full flex-col items-center border-gray-700 pb-6">
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="report.html"
+            >
+              <span class="ml-2 text-sm font-medium">Body</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded px-3 hover:bg-gray-700 hover:text-gray-300"
+              href="calorie-calculator.html"
+            >
+              <span class="ml-2 text-sm font-medium">Calculator</span>
+            </a>
+            <a
+              class="mt-2 flex h-12 w-full items-center rounded bg-gray-700 px-3 text-gray-200"
+              href="#"
+            >
+              <span class="ml-2 text-sm font-medium">BMI</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-10 rounded-xl bg-slate-300 p-10 shadow-xl">
+        <div>Body Mass Index (BMI)</div>
+        <div class="flex flex-row">
+          <div>
+            <div>
+              <div>Weight</div>
+              <div>
+                <input
+                  id="weight"
+                  class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                  name="weight"
+                  type="number"
+                  oninput="calculate()"
+                />
+                <label for="weight">lb</label>
+              </div>
+            </div>
+            <div>
+              <div>Height</div>
+              <div>
+                <div class="flex flex-row">
+                  <input
+                    id="feet"
+                    class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                    name="feet"
+                    type="number"
+                    oninput="calculate()"
+                  />
+                  <label for="feet">ft</label>
+                  <input
+                    id="inches"
+                    class="w-16 rounded-lg border-2 border-slate-400 text-center placeholder:text-center"
+                    name="inches"
+                    type="number"
+                    oninput="calculate()"
+                  />
+                  <label for="inches">in</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <div id="bmi">--.-</div>
+            <div id="bmi-text">BMI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
